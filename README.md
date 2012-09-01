@@ -2,7 +2,7 @@ Library Enforce
 ---------------
 Library Enforce is a Bukkit plugin that helps to make your server as quiet as a library by telling users who are spammy to kindly shut up through a warning system.
 
-If you want to contribute to Cature The Flag, submit a pull request and your code may get included in the plugin. If you find any bugs please report them to the <a href="http://dev.nekotech.tk">bug tracker</a>.
+If you want to contribute to Library Enforce, submit a pull request and your code may get included in the plugin. If you find any bugs please report them to the <a href="http://dev.nekotech.tk">bug tracker</a>.
 
 ---
 
