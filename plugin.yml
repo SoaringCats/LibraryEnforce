@@ -1,0 +1,10 @@
+name: LibraryEnforce
+version: 0.1-USE-WITH-CAUTION
+author: SoaringCats
+authors: [jamietech]
+website: http://dev.nekotech.tk
+main: tk.nekotech.library.Shhhhh
+permissions:
+  libraryenforce.librarian:
+    description: Allows librarians to ignore the restrictions
+    default: OP

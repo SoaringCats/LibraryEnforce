@@ -40,7 +40,7 @@ public class Shhhhh extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         this.patrons = Collections.newSetFromMap(new ConcurrentHashMap<Patron, Boolean>());
-        this.tracker = new ThreadSafePermissionTracker(this, "libraryenforce.avoid");
+        this.tracker = new ThreadSafePermissionTracker(this, "libraryenforce.librarian");
         this.getServer().getPluginManager().registerEvents(new AsyncPlayerChat(this), this);
         this.getServer().getPluginManager().registerEvents(this, this);
     }
