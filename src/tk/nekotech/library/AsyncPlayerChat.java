@@ -30,7 +30,7 @@ public class AsyncPlayerChat implements Listener {
             final Patron patron = this.shush.getPatron(event.getPlayer().getName());
             final String message = event.getMessage();
             patron.addMessage();
-            if (patron.getLast().equals(message)) {
+            if (message.equals(patron.getLast())) {
                 event.setCancelled(true);
                 patron.addWarning();
                 patron.sendMessage(ChatColor.RED + "Don't repeat yourself, this isn't allowed!");
@@ -39,6 +39,7 @@ public class AsyncPlayerChat implements Listener {
                 patron.addWarning();
                 patron.sendMessage(ChatColor.RED + "Move away from spawn before talking!");
             }
+            patron.setLast(message);
         }
     }
 }

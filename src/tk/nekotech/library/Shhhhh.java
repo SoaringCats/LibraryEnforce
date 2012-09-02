@@ -3,8 +3,10 @@ package tk.nekotech.library;
 import java.util.Collections;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import to.joe.j2mc.core.permissions.ThreadSafePermissionTracker;
@@ -43,6 +45,14 @@ public class Shhhhh extends JavaPlugin implements Listener {
         this.tracker = new ThreadSafePermissionTracker(this, "libraryenforce.librarian");
         this.getServer().getPluginManager().registerEvents(new AsyncPlayerChat(this), this);
         this.getServer().getPluginManager().registerEvents(this, this);
+        for (final Player player : this.getServer().getOnlinePlayers()) {
+            this.patrons.add(new Patron(player, this));
+        }
+    }
+
+    @EventHandler
+    public void welcomeToTheLibrary(final PlayerJoinEvent event) {
+        this.patrons.add(new Patron(event.getPlayer(), this));
     }
 
     @EventHandler

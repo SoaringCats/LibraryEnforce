@@ -11,7 +11,7 @@ public class UpdateCount implements Runnable {
 
     @Override
     public void run() {
-        if (this.patron.getMessages() >= 3) {
+        if (this.patron.getMessages() >= 2) {
             this.patron.addWarning();
             this.patron.sendMessage(ChatColor.RED + "Stop spamming!");
             this.patron.fast = true;

@@ -51,7 +51,7 @@ public class Patron {
     }
 
     public boolean isAtSpawnPoint() {
-        return this.joinLoc == this.player.getLocation();
+        return this.joinLoc.equals(this.player.getLocation());
     }
 
     protected void resetMessages() {
