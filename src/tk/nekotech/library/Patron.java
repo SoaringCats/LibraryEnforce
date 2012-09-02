@@ -13,12 +13,13 @@ public class Patron {
     private String last;
     public boolean fast;
     private int messages;
+    private final int update;
 
     public Patron(final Player player, final Shhhhh shush) {
         this.player = player;
         this.joinLoc = this.player.getLocation();
         this.fast = false;
-        shush.getServer().getScheduler().scheduleSyncRepeatingTask(shush, new UpdateCount(this), 20, 20);
+        this.update = shush.getServer().getScheduler().scheduleSyncRepeatingTask(shush, new UpdateCount(this), 20, 20);
     }
 
     public int addMessage() {
@@ -27,6 +28,10 @@ public class Patron {
 
     public int addWarning() {
         return this.warnings++;
+    }
+
+    protected void explode(final Shhhhh shush) {
+        shush.getServer().getScheduler().cancelTask(this.update);
     }
 
     public String getLast() {

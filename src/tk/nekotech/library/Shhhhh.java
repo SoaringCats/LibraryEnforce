@@ -47,6 +47,8 @@ public class Shhhhh extends JavaPlugin implements Listener {
 
     @EventHandler
     public void thanksForYourPatronage(final PlayerQuitEvent event) {
-        this.patrons.remove(this.getPatron(event.getPlayer().getName()));
+        final Patron patron = this.getPatron(event.getPlayer().getName());
+        patron.explode(this);
+        this.patrons.remove(patron);
     }
 }
