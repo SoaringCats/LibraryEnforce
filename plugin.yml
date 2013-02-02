@@ -1,9 +1,9 @@
 name: LibraryEnforce
-version: 0.1-USE-WITH-CAUTION
-author: SoaringCats
-authors: [jamietech]
-website: http://dev.nekotech.tk
-main: tk.nekotech.library.Shhhhh
+version: 1.0
+author: jamietech
+website: http://jamiete.ch
+main: ch.jamiete.library.Shhhhh
+
 permissions:
   libraryenforce.librarian:
     description: Allows librarians to ignore the restrictions
